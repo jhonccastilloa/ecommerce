@@ -44,3 +44,41 @@ export interface ProductID {
   productImgs: string[];
 }
 
+
+export interface Cart {
+  id:             number;
+  userId:         number;
+  title:          string;
+  description:    string;
+  brand:          string;
+  price:          string;
+  quantity:       number;
+  categoryId:     number;
+  status:         string;
+  createdAt:      Date;
+  updatedAt:      Date;
+  deletedAt:      null;
+  productsInCart: ProductsInCart;
+}
+
+export interface ProductsInCart {
+  id:        number;
+  cartId:    number;
+  productId: number;
+  quantity:  number;
+  status:    string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+
+export interface Category{
+  
+    id: number;
+    name: string;
+    status: string;
+    createdAt: Date;
+    updatedAt: Date;
+    deletedAt: null
+    
+}

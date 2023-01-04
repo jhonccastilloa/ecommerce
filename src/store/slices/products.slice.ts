@@ -21,3 +21,12 @@ export const getProducstThunks = () => (dispatch: AppDispatch) => {
     .then((res) => dispatch(setProductsGlobal(res.data.data.products)))
     .catch((err) => console.log(err));
 };
+
+export const getProductsByCategory=(id:number)=>(dispatch: AppDispatch)=>{
+
+  const URL=`https://e-commerce-api.academlo.tech/api/v1/products?category=${id}`
+  axios
+    .get(URL)
+    .then((res) => dispatch(setProductsGlobal(res.data.data.products)))
+    .catch((err) => console.log(err));
+}
