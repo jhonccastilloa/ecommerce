@@ -1,15 +1,21 @@
 import React, { FormEvent } from "react";
+import { InputPrice } from "../../types/types";
 
-const FilterPrice = () => {
-  const handleSubmit=(e:FormEvent<HTMLFormElement>)=>{
-    e.preventDefault()
-    const from=(e.currentTarget.from  as HTMLInputElement).value
-    const to=(e.currentTarget.to  as HTMLInputElement).value
-
+interface FilterPriceProps {
+  setInputPrice: (value: InputPrice) => void;
+}
+const FilterPrice = ({ setInputPrice }: FilterPriceProps) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const from = +(e.currentTarget.from as HTMLInputElement).value || 0;
+    const to = +(e.currentTarget.to as HTMLInputElement).value || Infinity;
+    setInputPrice({
+      from,
+      to
+    })
     console.log(from);
     console.log(to);
-    
-  }
+  };
   return (
     <div>
       <h2>Price</h2>

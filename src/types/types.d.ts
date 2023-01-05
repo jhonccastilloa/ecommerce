@@ -32,53 +32,52 @@ interface User {
   deletedAt: null;
 }
 
-
 export interface ProductID {
-  id:          number;
-  title:       string;
+  id: number;
+  title: string;
   description: string;
-  price:       string;
-  status:      string;
-  user:        User;
-  category:    string;
+  price: string;
+  status: string;
+  user: User;
+  category: string;
   productImgs: string[];
 }
 
-
 export interface Cart {
-  id:             number;
-  userId:         number;
-  title:          string;
-  description:    string;
-  brand:          string;
-  price:          string;
-  quantity:       number;
-  categoryId:     number;
-  status:         string;
-  createdAt:      Date;
-  updatedAt:      Date;
-  deletedAt:      null;
+  id: number;
+  userId: number;
+  title: string;
+  description: string;
+  brand: string;
+  price: string;
+  quantity: number;
+  categoryId: number;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: null;
   productsInCart: ProductsInCart;
 }
 
 export interface ProductsInCart {
-  id:        number;
-  cartId:    number;
+  id: number;
+  cartId: number;
   productId: number;
-  quantity:  number;
-  status:    string;
+  quantity: number;
+  status: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-
-export interface Category{
-  
-    id: number;
-    name: string;
-    status: string;
-    createdAt: Date;
-    updatedAt: Date;
-    deletedAt: null
-    
+export interface Category {
+  id: number;
+  name: string;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: null;
+}
+interface InputPrice {
+  from: number;
+  to: number;
 }
