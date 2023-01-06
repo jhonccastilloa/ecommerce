@@ -24,27 +24,28 @@ const home = () => {
   // console.log(products);
 
   return (
-    <div>
-      <h1>home</h1>
+    <section className="section__products container">
       <input value={filterValue} type="text" onChange={handleChange} />
       <ToOrderProducts/>
       <FilterPrice setInputPrice={setInputPrice} />
       <FilterCategory setfilterValue={setfilterValue} />
-      {products.filter(
-        ({ price }) => +price >= inputPrice.from && +price <= inputPrice.to
-      ).length !== 0 ? (
-        products
-          .filter(
-            ({ price }) => +price >= inputPrice.from && +price <= inputPrice.to
-          )
-          .filter((product) =>
-            product.title.toLowerCase().includes(filterValue)
-          )
-          .map((product) => <CardProduct key={product.id} product={product} />)
-      ) : (
-        <h2>Not exist products to this filter</h2>
-      )}
-    </div>
+      <div className="products__cards">
+        {products.filter(
+          ({ price }) => +price >= inputPrice.from && +price <= inputPrice.to
+        ).length !== 0 ? (
+          products
+            .filter(
+              ({ price }) => +price >= inputPrice.from && +price <= inputPrice.to
+            )
+            .filter((product) =>
+              product.title.toLowerCase().includes(filterValue)
+            )
+            .map((product) => <CardProduct key={product.id} product={product} />)
+        ) : (
+          <h2>Not exist products to this filter</h2>
+        )}
+      </div>
+    </section>
   );
 };
 
