@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import CardProduct from "../components/Home/CardProduct";
 import FilterCategory from "../components/Home/FilterCategory";
 import FilterPrice from "../components/Home/FilterPrice";
+import ToOrderProducts from "../components/Home/ToOrderProducts";
 import { RootState } from "../store";
 import { InputPrice } from "../types/types";
 const initValuesInputPrice: InputPrice = {
@@ -26,6 +27,7 @@ const home = () => {
     <div>
       <h1>home</h1>
       <input value={filterValue} type="text" onChange={handleChange} />
+      <ToOrderProducts/>
       <FilterPrice setInputPrice={setInputPrice} />
       <FilterCategory setfilterValue={setfilterValue} />
       {products.filter(

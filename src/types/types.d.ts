@@ -81,3 +81,38 @@ interface InputPrice {
   from: number;
   to: number;
 }
+
+export interface Purchase {
+  id: number;
+  userId: number;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: null;
+  cart: CartByUser;
+}
+
+export interface CartByUser {
+  id: number;
+  userId: number;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: null;
+  products: ProductByUser[];
+}
+export interface ProductByUser {
+  id: number;
+  userId: number;
+  title: string;
+  description: string;
+  brand: string;
+  price: string;
+  quantity: number;
+  categoryId: number;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: null;
+  productsInCart: ProductsInCart;
+}
