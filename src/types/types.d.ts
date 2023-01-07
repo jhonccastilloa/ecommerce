@@ -116,3 +116,8 @@ export interface ProductByUser {
   deletedAt: null;
   productsInCart: ProductsInCart;
 }
+
+export interface ShowFilters{
+  showFilterOptions: boolean,
+  showFilterSearch: boolean,
+}

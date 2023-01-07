@@ -1,0 +1,73 @@
+.info__main {
+  display: flex;
+  justify-content: center;
+}
+.info__carousel {
+  width: 50%;
+  padding: 50px;
+}
+.info__body {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.info__paragraph {
+  text-align: justify;
+}
+.info__aditional {
+  display: flex;
+  justify-content: space-around;
+}
+.info__price {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.info__quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.info__price-number::before {
+  content: "$";
+  margin-right: 6px;
+}
+.info__span {
+  color: var(--color-gray-secondary);
+  font-weight: 700;
+}
+.info__price-number {
+  font-weight: 700;
+  color: var(--color-red-primary);
+}
+
+.info__option {
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid var(--color-gray-secondary);
+  padding: 5px 15px ;
+  transition: background-color 500ms ease;
+  cursor: pointer;
+}
+.info__option:hover {
+  background-color: var(--color-red-primary);
+  color: white;
+}
+.info__span-quantity{
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid var(--color-gray-secondary);
+  width: 60px;
+  padding: 5px 15px ;
+}
+.info__btn{
+  background-color: var(--color-red-primary);
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  padding: 10px 0;
+}

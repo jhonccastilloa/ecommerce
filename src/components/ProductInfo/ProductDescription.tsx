@@ -5,6 +5,8 @@ import { AppDispatch } from "../../store";
 import { getUserCart } from "../../store/slices/cart.slice";
 import { Product, ProductID } from "../../types/types";
 import getConfig from "../../utils/getConfig";
+import ProductsSwiper from "./ProductsSwiper";
+import "./style/productDescription.css";
 
 interface ProductDescriptionProps {
   product: ProductID;
@@ -37,25 +39,37 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
       })
       .catch((res) => console.log(res));
   };
+  console.log(product);
   return (
-    <div>
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <div>
-        <span>Price:</span>
-        <h3>{product.price}</h3>
+    <div className="info__main">
+      <div className="info__carousel">
+        <ProductsSwiper productImgs={product.productImgs} />
       </div>
-      <div>
-        <h3>quantity</h3>
-        <div>
-          <div onClick={handleMinus}>-</div>
-          <div>{quantity}</div>
-          <div onClick={handlePlus}>+</div>
+      <div className="info__body">
+        <h2 className="info__title">{product.title}</h2>
+        <p className="info__paragraph">{product.description}</p>
+        <div className="info__aditional">
+          <div className="info__price">
+            <span className="info__span">Price:</span>
+            <h3 className="info__price-number">{product.price}</h3>
+          </div>
+          <div className="info__quantity">
+            <span className="info__span">Quantity:</span>
+            <div className="info__quantity-options">
+              <button className="info__option" onClick={handleMinus}>
+                -
+              </button>
+              <p className="info__span-quantity">{quantity}</p>
+              <button className="info__option" onClick={handlePlus}>
+                +
+              </button>
+            </div>
+          </div>
         </div>
+        <button className="info__btn" onClick={handleCart}>
+          Add to cart <i className="fa-solid fa-cart-plus"></i>
+        </button>
       </div>
-      <button onClick={handleCart}>
-        Add to cart <i className="fa-solid fa-cart-plus"></i>
-      </button>
     </div>
   );
 };

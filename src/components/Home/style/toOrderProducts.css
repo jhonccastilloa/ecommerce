@@ -1,0 +1,28 @@
+.filter__group{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.filter__items{
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.filter__span{
+  color: rgb(170, 170, 170);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 200ms ease,border-color 200ms ease;
+  cursor: pointer;
+
+}
+.filter__span:hover{
+  color: var(--color-dark-primary);
+  border-bottom: 2px solid ;
+
+}
+.filter__span--active{
+  color: var(--color-dark-primary);
+  border-bottom: 2px solid ;
+
+}

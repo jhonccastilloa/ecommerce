@@ -15,11 +15,26 @@ const productsSlice = createSlice({
     descendigOrderProdutcs: (state) => {
       state.sort((a, b) => +b.price - +a.price);
     },
+    AandZOrderProdutcs: (state) => {
+      state.sort((a, b) => a.title.localeCompare(b.title));
+    },
+    ZandAOrderProdutcs: (state) => {
+      state.sort((a, b) => b.title.localeCompare(a.title));
+    },
+    defaultOrderProdutcs: (state) => {
+      state.sort((a, b) => a.id - b.id);
+    },
   },
 });
 
-export const { setProductsGlobal, ascendigOrderProdutcs,descendigOrderProdutcs } =
-  productsSlice.actions;
+export const {
+  setProductsGlobal,
+  ascendigOrderProdutcs,
+  descendigOrderProdutcs,
+  AandZOrderProdutcs,
+  ZandAOrderProdutcs,
+  defaultOrderProdutcs,
+} = productsSlice.actions;
 export default productsSlice.reducer;
 
 export const getProducstThunks = () => (dispatch: AppDispatch) => {

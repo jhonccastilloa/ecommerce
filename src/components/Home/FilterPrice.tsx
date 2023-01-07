@@ -1,5 +1,6 @@
 import React, { FormEvent } from "react";
 import { InputPrice } from "../../types/types";
+import "./style/filterPrice.css";
 
 interface FilterPriceProps {
   setInputPrice: (value: InputPrice) => void;
@@ -11,24 +12,28 @@ const FilterPrice = ({ setInputPrice }: FilterPriceProps) => {
     const to = +(e.currentTarget.to as HTMLInputElement).value || Infinity;
     setInputPrice({
       from,
-      to
-    })
+      to,
+    });
     console.log(from);
     console.log(to);
   };
   return (
-    <div>
-      <h2>Price</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="from">From</label>
-          <input type="number" id="from" />
+    <div className="filter__group">
+      <h3 className="filter__title-sort">Price</h3>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="form__group">
+          <label className="form__label" htmlFor="from">
+            From:
+          </label>
+          <input className="form__input" type="number" id="from" />
         </div>
-        <div>
-          <label htmlFor="to">To</label>
-          <input type="number" id="to" />
+        <div className="form__group">
+          <label className="form__label" htmlFor="to">
+            To:
+          </label>
+          <input className="form__input" type="number" id="to" />
         </div>
-        <button>Enviar</button>
+        <button className="filter__buttons">Filter</button>
       </form>
     </div>
   );

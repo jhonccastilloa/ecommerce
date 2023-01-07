@@ -1,3 +1,10 @@
+:root {
+  --color-dark-primary: #15161d;
+  --color-red-primary: #d10024;
+  --color-gray-primary: #f2f2f2;
+  --color-gray-secondary:#aaa7;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -25,4 +32,15 @@ a {
 
 body {
   font-family: "Montserrat", sans-serif;
+  color: #2b2d42;
+}
+button {
+  font-family: inherit;
+  border: none;
+  background-color: #fff;
+}
+input {
+  font-family: inherit;
+  border: none;
+  background-color: #fff;
 }

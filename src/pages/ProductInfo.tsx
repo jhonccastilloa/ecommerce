@@ -39,17 +39,17 @@ const ProductInfo = () => {
   console.log(product);
 
   return (
-    <div>
+    <section className="section__info container">
       {product && <ProductDescription product={product} />}
-      <section>
-        <h2>Discover similar items</h2>
-        <div>
+      <div className="info__footer">
+        <h2 className="info__subtitle" style={{color:"#d10024"}}>Discover similar items</h2>
+        <div className="products__cards">
           {similar?.map((sim) => (
             <CardProduct key={sim.id} product={sim} />
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

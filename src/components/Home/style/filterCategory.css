@@ -1,0 +1,17 @@
+.category__list {
+  display: flex;
+  gap: 25px;
+}
+.category__item {
+  border-bottom: 2px solid white;
+  color: var(--color-dark-primary);
+  font-weight: 500;
+}
+.category__item--active {
+  color: var(--color-red-primary);
+  border-bottom: 2px solid var(--color-red-primary);
+}
+.category__item:hover {
+  color: var(--color-red-primary);
+  border-bottom: 2px solid var(--color-red-primary);
+}

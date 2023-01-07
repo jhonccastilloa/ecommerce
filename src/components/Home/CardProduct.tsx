@@ -33,6 +33,8 @@ const CardProduct = ({ product }: CardProductProps) => {
       })
       .catch((err) => console.log(err));
   };
+  console.log(product);
+
   return (
     <article className="product" onClick={handleClick}>
       <header className="product__header">
@@ -40,14 +42,17 @@ const CardProduct = ({ product }: CardProductProps) => {
         <img className="product__img" src={product.productImgs[1]} alt="" />
       </header>
       <section className="product__body">
+        <h4 className="product__category">{product.category.name}</h4>
         <h3 className="product__name">{product.title}</h3>
-        <article className="product__price-container">
-          <span className="product__price-label">Price</span>
-          <h4 className="product__price-number">{product.price}</h4>
-        </article>
-        <button onClick={handleBtnClick} className="product__btn">
-          <i className="fa-solid fa-cart-plus"></i>
-        </button>
+        <div className="product__footer">
+          <article className="product__price-container">
+            <span className="product__price-label">Price:</span>
+            <h4 className="product__price-number">{product.price}</h4>
+          </article>
+          <button onClick={handleBtnClick} className="product__btn">
+            <i className="fa-solid fa-cart-plus"></i>
+          </button>
+        </div>
       </section>
     </article>
   );

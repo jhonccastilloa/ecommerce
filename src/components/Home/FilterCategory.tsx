@@ -7,6 +7,7 @@ import {
   getProductsByCategory,
 } from "../../store/slices/products.slice";
 import { Category } from "../../types/types";
+import "./style/filterCategory.css";
 
 interface FilterCategoryProps {
   setfilterValue: (value: string) => void;
@@ -14,6 +15,7 @@ interface FilterCategoryProps {
 
 const FilterCategory = ({ setfilterValue }: FilterCategoryProps) => {
   const [categories, setCategories] = useState<Category[] | null>(null);
+  const [idCategory, setIdCategory] = useState(0);
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
@@ -25,26 +27,40 @@ const FilterCategory = ({ setfilterValue }: FilterCategoryProps) => {
   }, []);
 
   const handleClick = (id: number) => {
+    setIdCategory(id);
     dispatch(getProductsByCategory(id));
     setfilterValue("");
   };
 
   const handleAllProduct = () => {
     dispatch(getProducstThunks());
+    setIdCategory(0);
     setfilterValue("");
   };
+  console.log(idCategory);
+
   return (
-    <div>
-      <h3>Categories</h3>
-      <ul>
-        <li onClick={handleAllProduct}>All Product</li>
-        {categories?.map((category) => (
-          <li onClick={() => handleClick(category.id)} key={category.id}>
-            {category.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="category__list">
+      <li
+        className={` category__item ${
+          idCategory == 0 && "category__item--active"
+        }`}
+        onClick={handleAllProduct}
+      >
+        All Product
+      </li>
+      {categories?.map((category) => (
+        <li
+          className={` category__item ${
+            idCategory == category.id && "category__item--active"
+          }`}
+          onClick={() => handleClick(category.id)}
+          key={category.id}
+        >
+          <span>{category.name}</span>
+        </li>
+      ))}
+    </ul>
   );
 };
 
