@@ -1,0 +1,11 @@
+.section__purchases{
+  padding: 40px 0 80px 0;
+}
+.purchases__title{
+  padding: 40px 0;
+  color: var(--color-red-primary);
+}
+.purchases__container{
+  display: grid;
+  gap: 20px;
+}

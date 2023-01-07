@@ -1,0 +1,10 @@
+.purchase__item {
+  border: 1px solid var(--color-gray-secondary);
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+.purchase__date{
+  padding: 15px 15px 30px 15px;
+  border-bottom: 1px solid var(--color-gray-secondary);
+}

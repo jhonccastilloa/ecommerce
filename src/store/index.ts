@@ -4,7 +4,7 @@ import cart from "./slices/cart.slice";
 const store = configureStore({
   reducer: {
     products,
-    cart
+    cart,
   },
 });
 

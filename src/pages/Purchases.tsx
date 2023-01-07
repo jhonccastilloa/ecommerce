@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import PurchaseCard from "../components/Purchases/PurchaseCard";
 import { Purchase } from "../types/types";
 import getConfig from "../utils/getConfig";
+import './style/purchases.css'
 
 const Purchases = () => {
   const [purchasesList, setPurchasesList] = useState<Purchase[] | null>(null);
@@ -18,12 +19,14 @@ const Purchases = () => {
   console.log(purchasesList);
 
   return (
-    <div>
-      <h2>My purchases</h2>
-      <div className="purchases-container">{purchasesList?.map(purchase=>(
-        <PurchaseCard key={purchase.id} purchase={purchase}/>
-      ))}</div>
-    </div>
+    <section className="section__purchases container">
+      <h1 className="purchases__title">My purchases</h1>
+      <div className="purchases__container">
+        {purchasesList?.map((purchase) => (
+          <PurchaseCard key={purchase.id} purchase={purchase} />
+        ))}
+      </div>
+    </section>
   );
 };
 

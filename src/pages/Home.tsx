@@ -29,7 +29,6 @@ const home = () => {
     const { value } = e.target;
     setfilterValue(value.toLowerCase().trim());
   };
-  // console.log(products);
 
   const handleFilter = (e: MouseEvent<HTMLButtonElement>) => {
     const { name } = e.currentTarget;
@@ -46,10 +45,7 @@ const home = () => {
         showFilterOptions: false,
       });
     }
-    // setShowFilters({
-    //   ...showFilters,
-    //   [name]: !showFilters[name as keyof ShowFilters],
-    // });
+    
   };
 
   console.log(showFilters);

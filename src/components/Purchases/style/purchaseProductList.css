@@ -1,0 +1,33 @@
+.purchase__product-item{
+  display: flex;
+  align-items: center;
+}
+.purchase__product-figure {
+  width: 20%;
+  aspect-ratio: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.purchase__product-img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+.purchase__product-name{
+  width: 50%;
+}
+.purchase__product-quantity{
+  text-align: center;
+  width: 15%;
+  padding: 5px 0;
+  border: 2px solid var(--color-gray-primary);
+
+}
+.purchase__product-price{
+  width: 15%;
+  text-align: center;
+  color: var(--color-red-primary);
+  font-weight: 600;
+
+}

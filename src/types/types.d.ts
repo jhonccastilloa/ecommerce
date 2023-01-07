@@ -27,8 +27,8 @@ interface User {
   role: string;
   status: string;
   by: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
   deletedAt: null;
 }
 
