@@ -1,5 +1,7 @@
 .section__purchases{
   padding: 40px 0 80px 0;
+  min-height: calc(100vh - 106px - 55px);
+  
 }
 .purchases__title{
   padding: 40px 0;

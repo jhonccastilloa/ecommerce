@@ -1,3 +1,6 @@
+.section__info{
+  min-height: calc(100vh - 106px - 55px);
+}
 .info__footer{
   padding: 10px 0 50px 0;
 }
