@@ -57,7 +57,7 @@ const Cart = () => {
                 (acc, product) =>
                   acc + Number(product.price) * product.productsInCart.quantity,
                 0
-              )}
+              ).toFixed(2)}
             </p>
           </div>
           <div className="cart__total-info">
@@ -71,7 +71,7 @@ const Cart = () => {
                 (acc, product) =>
                   acc + Number(product.price) * product.productsInCart.quantity,
                 0
-              )}
+              ).toFixed(2)}
             </p>
           </div>
           <button className="form__btn" onClick={handleCheckout}>Checkout</button>
