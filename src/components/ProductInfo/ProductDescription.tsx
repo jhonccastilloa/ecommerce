@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
 import { getUserCart } from "../../store/slices/cart.slice";
 import { Product, ProductID } from "../../types/types";
 import getConfig from "../../utils/getConfig";
@@ -15,6 +15,8 @@ interface ProductDescriptionProps {
 const ProductDescription = ({ product }: ProductDescriptionProps) => {
   const [quantity, setQuantity] = useState(1);
   const dispatch: AppDispatch = useDispatch();
+
+  const { cart } = useSelector((state: RootState) => state);
 
   const handlePlus = () => {
     setQuantity(quantity + 1);
@@ -37,7 +39,22 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
         console.log(res);
         dispatch(getUserCart());
       })
-      .catch((res) => console.log(res));
+      .catch((err) => {
+        if (err.response.status === 400) {
+          const URLPatch = "https://e-commerce-api.academlo.tech/api/v1/cart";
+          const prevQuantity = cart.filter((e) => e.id === product.id)[0]
+            .productsInCart.quantity;
+
+          const data = {
+            id: product.id,
+            newQuantity: prevQuantity + quantity,
+          };
+          axios
+            .patch(URLPatch, data, getConfig())
+            .then((res) => dispatch(getUserCart()))
+            .catch((err) => console.log(err));
+        }
+      });
   };
   console.log(product);
   return (

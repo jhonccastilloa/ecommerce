@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import "./style/cardProduct.css";
 import axios, { Axios } from "axios";
 import getConfig from "../../utils/getConfig";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getUserCart } from "../../store/slices/cart.slice";
-import { AppDispatch } from "../../store";
+import { AppDispatch, RootState } from "../../store";
 
 interface CardProductProps {
   product: Product;
@@ -14,6 +14,7 @@ interface CardProductProps {
 
 const CardProduct = ({ product }: CardProductProps) => {
   const navigate = useNavigate();
+  const { cart } = useSelector((state: RootState) => state);
   const handleClick = () => {
     navigate(`/product/${product.id}`);
   };
@@ -31,9 +32,19 @@ const CardProduct = ({ product }: CardProductProps) => {
         console.log(res);
         dispatch(getUserCart());
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err.response.status === 400) {
+          const URLPatch = "https://e-commerce-api.academlo.tech/api/v1/cart";
+          const prevQuantity = cart.filter((e) => e.id === product.id)[0]
+            .productsInCart.quantity;
+          const data = { id: product.id, newQuantity: prevQuantity + 1 };
+          axios
+            .patch(URLPatch, data, getConfig())
+            .then((res) => dispatch(getUserCart()))
+            .catch((err) => console.log(err));
+        }
+      });
   };
-  console.log(product);
 
   return (
     <article className="product" onClick={handleClick}>
