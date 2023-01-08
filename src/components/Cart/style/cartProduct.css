@@ -27,8 +27,28 @@
 
 .table__name {
   text-align: center;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
+.table__name--quantity{
+ color: var(--color-red-primary);
+ font-size: 18px;
+ cursor: pointer;
 
+}
+.table__span{
+  color: var(--color-dark-primary);
+  font-weight: 600;
+  font-size: 18px;
+}
+.gray{
+  color: var(--color-gray-primary);
+}
+.table__name-span{
+  font-size: 15px;
+}
 table {
   border-collapse: collapse;
 }
@@ -38,3 +58,25 @@ th, td {
   border-bottom: 1px solid #ddd;
 }
 
+.loader {
+  width: 96px;
+  height: 24px;
+  display: inline-block;
+  background-color: var(--color-red-primary);
+  border: 1px solid var(--color-red-primary);
+  border-radius: 4px;
+  background: linear-gradient(45deg, transparent 49%, var(--color-red-primary) 50%, var(--color-red-primary) 50%, transparent 51%, transparent), linear-gradient(-45deg, transparent 49%, var(--color-red-primary) 50%, var(--color-red-primary) 50%, transparent 51%, transparent);
+  font-size: 15px;
+  background-size: 1em 1em;
+  box-sizing: border-box;
+  animation: barStripe 0.6s linear infinite;
+}
+
+@keyframes barStripe {
+  0% {
+    background-position: 1em 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
