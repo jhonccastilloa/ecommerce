@@ -80,7 +80,7 @@ const CartProduct = ({ product }: CardProductProps) => {
             className="fa-solid fa-greater-than"
             onClick={() => handleClick(+1)}
           ></i>
-        </p>:<span className="loader"></span>}
+        </p>:<span className="loader2"></span>}
       </td>
       <td>
         <p className="table__name">

@@ -51,6 +51,7 @@
 }
 
 .login__btn {
+  cursor: pointer;
   padding: 10px 30px;
   color: white;
   background-color: inherit;
@@ -58,6 +59,7 @@
 }
 
 .form__btn {
+  cursor: pointer;
   margin-top: 25px;
   color: var(--color-red-primary);
   padding: 10px 35px;
