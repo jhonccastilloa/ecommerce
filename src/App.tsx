@@ -23,22 +23,7 @@ function App() {
     dispatch(getUserCart());
   }, []);
 
-  // useEffect(() => {
-  //   const URL = "https://e-commerce-api.academlo.tech/api/v1/users";
-  //   const data = {
-  //     firstName: "Jhon",
-  //     lastName: "Castillo",
-  //     email: "gpro1pro@gmail.com",
-  //     password: "Ribonucleico1",
-  //     phone: "1234567891",
-  //     role: "admin",
-  //   };
-  //   axios
-  //     .post(URL, data)
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
+ 
   return (
     <div className="App">
       <Header />

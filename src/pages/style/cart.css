@@ -1,7 +1,8 @@
 .section__cart{
   padding: 40px 0 80px 0;
   min-height: calc(100vh - 106px - 55px);
-
+  display: flex;
+  flex-direction: column;
 }
 .cart__container{
   display: flex;
@@ -31,7 +32,16 @@
   width: 100px;
   font-weight: 500;
 }
-
+.cart__empty{
+  text-align: center;
+  align-self: center;
+  margin: auto 0;
+  display: grid;
+  gap: 20px;
+}
+.cart__figure{
+  max-width: 400px;
+}
 @media (max-width: 1133px) {
   
   .cart__container{

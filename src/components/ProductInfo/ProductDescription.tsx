@@ -56,7 +56,6 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
         }
       });
   };
-  console.log(product);
   return (
     <div className="info__main">
       <div className="info__carousel">

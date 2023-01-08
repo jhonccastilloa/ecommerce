@@ -83,6 +83,7 @@
 }
 
 .product__btn{
+  cursor: pointer;
   width: 40px;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -90,6 +91,10 @@
   background-color: #f85555;
   border: none;
   color: white;
+  transition: transform 500ms ease;
+}
+.product__btn:hover{
+  transform: scale(1.1);
 }
 .product__btn i{
   font-size: 1.1rem;
