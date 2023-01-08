@@ -56,7 +56,9 @@ const Login = () => {
       <section className="section__login section__login--Logged  container">
         <div className="login__info">
           <h2 className="login__subtitle">User Logged ✔</h2>
-          <p className="login__paragraph">Welcome user : {localStorage.getItem("user")} </p>
+          <p className="login__paragraph">
+            Welcome user : {localStorage.getItem("user")}{" "}
+          </p>
           <button className="login__btn" onClick={handleLogout}>
             Logout
           </button>
@@ -77,6 +79,17 @@ const Login = () => {
       <div className="login__form">
         <form className="form form--login" onSubmit={handleSubmit(submit)}>
           <h2 className="form__title">LOG IN TO ENTER</h2>
+
+          <div className="test">
+            <h3 className="test__title">Test Data</h3>
+            <p className="test__text">
+              <i className="fa-solid fa-user"></i> <span>john@gmail.com</span>
+            </p>
+            <p className="test__text">
+              <i className="fa-solid fa-key"></i>
+              <span> john1234</span>
+            </p>
+          </div>
           <div className="form__group">
             <label className="form__label" htmlFor="email">
               Email
