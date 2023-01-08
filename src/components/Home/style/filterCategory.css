@@ -1,6 +1,8 @@
 .category__list {
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
+  cursor: pointer;
 }
 .category__item {
   border-bottom: 2px solid white;

@@ -1,8 +1,11 @@
 .section__login {
   padding: 50px 0;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  min-height: calc(100vh - 106px - 55px);
+  justify-content: center;
+
 }
 .section__login--Logged{
   justify-content: center;
@@ -29,7 +32,7 @@
 }
 .login__form {
   min-width: 324px;
-
+  min-height: 324px;
   width: 50%;
   display: flex;
   align-items: center;
@@ -44,9 +47,16 @@
   border: 2px solid white;
 }
 
+
 .form__btn{
   margin-top: 25px;
   color: var(--color-red-primary);
   padding: 10px 35px ;
   border: 2px solid var(--color-red-primary);
+  transition: background-color 500ms ease;
 }
+.form__btn:hover{
+  color: white;
+  background-color: var(--color-red-primary);
+}
+

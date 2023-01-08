@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import ProductDescription from "../components/ProductInfo/ProductDescription";
 import { RootState } from "../store";
 import CardProduct from "../components/Home/CardProduct";
+import './style/productInfo.css'
 
 const ProductInfo = () => {
   const { id } = useParams();

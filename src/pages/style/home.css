@@ -18,13 +18,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
 }
+
 .products__filter-more{
   display: flex;
   gap: 20px;
 }
 .filter__buttons{
+  cursor: pointer;
   background-color: white;
   padding: 10px 20px;
   border: 1px solid #aaa7;
@@ -49,6 +52,7 @@
   height: 0;
   overflow: hidden;
   transition: height 500ms ease;
+  flex-wrap: wrap;
 }
 .filter__options--show{
   height: 200px;
@@ -71,3 +75,14 @@
   padding: 15px 30px;
 }
 
+@media (max-width: 1133px) {
+  
+  .products__filter{
+    gap: 15px;
+    justify-content: center;
+  }
+  .filter__options--show{
+    height: 500px;
+  
+  }
+}

@@ -1,8 +1,11 @@
-import React from 'react'
+import './style/footer.css'
 
 const Footer = () => {
   return (
-    <div>Copyright ©</div>
+    <footer className='footer'>
+      <p className='footer__text'> © 2023 Ecommerce All Rights Reserved.</p>
+      
+    </footer>
   )
 }
 

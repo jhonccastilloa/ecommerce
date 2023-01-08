@@ -1,12 +1,16 @@
 .info__main {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .info__carousel {
+  min-width: 312px;
+
   width: 50%;
   padding: 50px;
 }
 .info__body {
+  min-width: 312px;
   width: 50%;
   padding: 50px;
   display: flex;
@@ -47,7 +51,7 @@
   font-size: 16px;
   font-weight: 600;
   border: 1px solid var(--color-gray-secondary);
-  padding: 5px 15px ;
+  padding: 5px 15px;
   transition: background-color 500ms ease;
   cursor: pointer;
 }
@@ -55,19 +59,38 @@
   background-color: var(--color-red-primary);
   color: white;
 }
-.info__span-quantity{
+.info__span-quantity {
   display: inline-block;
   text-align: center;
   font-size: 16px;
   font-weight: 600;
   border: 1px solid var(--color-gray-secondary);
   width: 60px;
-  padding: 5px 15px ;
+  padding: 5px 15px;
 }
-.info__btn{
+.info__btn {
   background-color: var(--color-red-primary);
   font-size: 20px;
   font-weight: 500;
   color: white;
   padding: 10px 0;
+}
+
+@media (max-width: 954px) {
+  .info__carousel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .info__body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 710px) {
+  .info__carousel {
+    width: 100%;
+  }
+  .info__body {
+    width: 100%;
+  }
 }

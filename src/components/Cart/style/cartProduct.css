@@ -1,5 +1,40 @@
-.cart-product{
- padding: 20px; 
- margin-bottom: 20px;
+.cart-product {
+  padding: 20px;
+  margin-bottom: 20px;
   border: 1px solid red;
 }
+.table{
+  max-width: 740px;
+  width: 100%;
+}
+.table__td {
+  display: flex;
+  align-items: center;
+}
+.table__figure {
+  width: 111px;
+  min-width: 111px;
+  aspect-ratio: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table__img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.table__name {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
